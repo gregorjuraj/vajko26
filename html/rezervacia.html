@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervácia pneuservisu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rezervacia.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="brand">
+        <span class="brand-logo">LOGO</span>
+
+        <span class="brand-text">
+            <strong>NÁZOV FIRMY</strong>
+            <span>Pneuservis a recyklácia vozidiel</span>
+        </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Hlavná navigácia">
+        <a href="index.html">Úvod</a>
+        <a href="rezervacia.html">Pneuservis</a>
+        <a href="#">Recyklácia vozidiel</a>
+        <a href="#">Kontakt</a>
+    </nav>
+
+    <div class="header-actions">
+        <a href="#" class="account-link">Prihlásenie / Registrácia</a>
+        <a href="rezervacia.html" class="button">Rezervovať termín</a>
+    </div>
+</header>
+
+<main class="page-content">
+    <h1>Rezervácia pneuservisu</h1>
+    <p>
+        Vyberte vozidlo, služby a termín návštevy.
+        Rezervácia sa potvrdí automaticky.
+    </p>
+
+    <form class="reservation-form">
+        <div class="reservation-columns">
+            <section class="reservation-section">
+                <h2>1. Vozidlo a služby</h2>
+
+                <div class="form-field">
+                    <label for="vehicle">Vozidlo</label>
+                    <select id="vehicle" name="vehicle" required>
+                        <option value="">Vyberte vozidlo</option>
+                        <option value="1">Škoda Octavia · ZA123AB</option>
+                        <option value="2">Volkswagen Golf · ZA456CD</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="service">Hlavná služba</label>
+                    <select id="service" name="service" required>
+                        <option value="">Vyberte službu</option>
+                        <option value="1">Prezutie kolies · 45 min · 40 €</option>
+                        <option value="2">Vyváženie kolies · 30 min · 25 €</option>
+                    </select>
+                </div>
+
+                <fieldset class="additional-services">
+                    <legend>Doplnkové služby</legend>
+
+                    <label>
+                        <input type="checkbox" name="extras[]" value="oil">
+                        Výmena oleja · 30 min · od 30 €
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="extras[]" value="pressure">
+                        Kontrola tlaku pneumatík · 10 min · 5 €
+                    </label>
+                </fieldset>
+
+                <div class="form-field">
+                    <label for="note">Poznámka (nepovinná)</label>
+                    <textarea
+                        id="note"
+                        name="note"
+                        rows="3"
+                        placeholder="Doplňte informácie pre servis…"
+                    ></textarea>
+                </div>
+            </section>
+            <section class="reservation-section">
+                <h2>2. Dátum a čas</h2>
+
+                <div class="form-field">
+                    <label for="date">Dátum návštevy</label>
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        value="2026-10-27"
+                        required
+                    >
+                </div>
+
+                <fieldset class="time-selection">
+                    <legend>Čas návštevy</legend>
+
+                    <div class="time-grid">
+                        <label class="time-option">
+                            <input type="radio" name="time" value="08:00" required>
+                            <span>08:00</span>
+                        </label>
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="09:30" disabled>
+                            <span>09:30 · obsadené</span>
+                        </label>
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="10:00" checked>
+                            <span>10:00</span>
+                        </label>
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="11:30">
+                            <span>11:30</span>
+                        </label>
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="13:00" disabled>
+                            <span>13:00 · obsadené</span>
+                        </label>
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="14:30">
+                            <span>14:30</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <p class="availability-note">
+                    Obsadené termíny nie je možné vybrať.
+                    Zelenou je označený vybraný čas.
+                </p>
+            </section>
+            <section class="reservation-summary">
+                <div>
+                    <h2>3. Súhrn rezervácie</h2>
+                    <p>Škoda Octavia · Prezutie kolies + výmena oleja</p>
+                    <p>27. 10. 2026 · 10:00 – 11:15 · Trvanie: 75 min</p>
+                    <p><strong>Orientačná cena: od 70 €</strong></p>
+                </div>
+
+                <div class="summary-actions">
+                    <button type="button" class="button">
+                        Potvrdiť rezerváciu
+                    </button>
+                    <p>Po potvrdení sa termín rezervuje.</p>
+                </div>
+            </section>
+        </div>
+    </form>
+</main>
+
+<footer class="site-footer">
+    <div>
+        <h2>NÁZOV FIRMY</h2>
+        <p>Pneuservis a recyklácia vozidiel</p>
+        <p>Ulica a číslo · PSČ a mesto</p>
+    </div>
+
+    <div>
+        <h2>Kontakt</h2>
+        <p>Telefón: +421 XXX XXX XXX</p>
+        <p>E-mail: info@example.sk</p>
+    </div>
+
+    <div>
+        <h2>Otváracie hodiny</h2>
+        <p>Pracovné dni: 8:00 – 16:00</p>
+        <p>Víkend: podľa dohody</p>
+    </div>
+</footer>
+    
+</body>
+</html>

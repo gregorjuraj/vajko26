@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #203b2d;
+    background-color: #ffffff;
+}
+
+/* header */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 4%;
+    border-bottom: 1px solid #cddfd1;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background-color: #246b45;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.brand-text strong {
+    color: #246b45;
+    font-size: 20px;
+}
+
+.brand-text > span {
+    color: #5c7163;
+    font-size: 13px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.main-nav a,
+.account-link {
+    font-size: 14px;
+}
+
+.main-nav a:hover,
+.account-link:hover {
+    color: #246b45;
+    text-decoration: underline;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border-radius: 8px;
+    background-color: #246b45;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #1b5235;
+}
+
+/* hlavna stranka */
+.page-content {
+    padding: 40px 4%;
+}
+
+.content-placeholder {
+    min-height: 560px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #cddfd1;
+    border-radius: 12px;
+    background-color: #f6faf7;
+    text-align: center;
+}
+
+.content-placeholder h1 {
+    margin: 0 0 12px;
+    color: #246b45;
+    font-size: 28px;
+}
+
+.content-placeholder p {
+    margin: 0;
+    color: #5c7163;
+    line-height: 1.6;
+}
+
+/* paticka */
+.site-footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* 2/4 ostatne 1/4 a 1/4 */
+    gap: 32px;
+    padding: 32px 4%;
+    border-top: 1px solid #cddfd1;
+    background-color: #edf6ef;
+}
+
+.site-footer h2 {
+    margin: 0 0 14px;
+    font-size: 18px;
+}
+
+.site-footer p {
+    margin: 6px 0;
+    color: #5c7163;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* responzivna cast, uprava pri inom rozliseni px */
+
+@media (max-width: 1100px) {
+    .site-header {
+        flex-wrap: wrap;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        gap: 16px;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .account-link {
+        text-align: center;
+    }
+
+    .page-content {
+        padding: 24px 4%;
+    }
+
+    .content-placeholder {
+        min-height: 360px;
+        padding: 24px 16px;
+    }
+
+    .content-placeholder h1 {
+        font-size: 22px;
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
