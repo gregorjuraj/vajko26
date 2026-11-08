@@ -35,6 +35,7 @@
         <a href="<?= $link->url('home.pneuservis') ?>">Pneuservis</a>
         <a href="<?= $link->url('home.recyklacia') ?>">Recyklácia vozidiel</a>
         <a href="<?= $link->url('home.contact') ?>">Kontakt</a>
+        <a href="<?= $link->url('service.index') ?>">Správa služieb</a>
     </nav>
 
     <div class="header-actions">

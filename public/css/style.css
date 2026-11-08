@@ -147,6 +147,130 @@ a {
     line-height: 1.6;
 }
 
+/* Úvodná stránka */
+.home-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 349px);
+    align-items: center;
+    gap: 40px;
+    padding: 32px;
+    border-radius: 12px;
+    background-color: #f6faf7;
+}
+
+.home-intro h1 {
+    max-width: 700px;
+    margin: 0 0 20px;
+    color: #246b45;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.home-intro p {
+    max-width: 700px;
+    margin: 0 0 24px;
+    color: #5c7163;
+    line-height: 1.7;
+}
+
+.home-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.home-contact-link {
+    color: #246b45;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.home-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.home-services {
+    margin-top: 40px;
+}
+
+.home-services h2 {
+    margin: 0 0 20px;
+    color: #246b45;
+}
+
+.home-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.home-service-card {
+    padding: 24px;
+    border: 1px solid #cddfd1;
+    border-radius: 8px;
+}
+
+.home-service-card h3 {
+    margin: 0 0 12px;
+    color: #246b45;
+    font-size: 22px;
+}
+
+.home-service-card p {
+    margin: 0 0 20px;
+    color: #5c7163;
+    line-height: 1.7;
+}
+
+.home-service-card a {
+    color: #246b45;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.home-booking {
+    margin-top: 40px;
+}
+
+.home-booking > h2 {
+    margin: 0 0 20px;
+    color: #246b45;
+}
+
+.home-booking-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0;
+    padding-left: 24px;
+}
+
+.home-booking-steps li {
+    padding: 8px;
+}
+
+.home-booking-steps li::marker {
+    color: #246b45;
+    font-weight: bold;
+}
+
+.home-booking-steps h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.home-booking-steps p {
+    margin: 0;
+    color: #5c7163;
+    line-height: 1.6;
+}
+
 /* kontakt */
 .contact-page > h1 {
     margin: 0 0 8px;
@@ -383,6 +507,29 @@ a {
     outline-offset: 3px;
 }
 
+
+
+
+
+.button-edit {
+    background-color: #2563eb;
+}
+
+.button-edit:hover {
+    background-color: #1d4ed8;
+}
+
+.button-delete {
+    border: 0;
+    background-color: #b42318;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.button-delete:hover {
+    background-color: #8f1c13;
+}
+
 /* responzivna cast, uprava pri inom rozliseni px */
 
 @media (max-width: 1100px) {
@@ -491,3 +638,37 @@ a {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+@media (max-width: 800px) {
+    .home-intro {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .home-intro h1 {
+        font-size: 28px;
+    }
+
+    .home-photo {
+        max-width: 349px;
+    }
+}
+
+@media (max-width: 450px) {
+    .home-actions {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .home-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-booking-steps {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
