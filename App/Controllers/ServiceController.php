@@ -7,6 +7,8 @@ use Framework\Core\BaseController;
 use Framework\Http\Request;
 use Framework\Http\Responses\Response;
 
+use App\Models\ReservationService;
+
 class ServiceController extends BaseController
 {
     public function authorize(Request $request, string $action): bool
@@ -19,7 +21,8 @@ class ServiceController extends BaseController
         $services = Service::getAll();
 
         return $this->html([
-            'services' => $services
+            'services' => $services,
+            'error' => $request->get('error')
         ]);
     }
 
@@ -75,6 +78,17 @@ class ServiceController extends BaseController
             $service = Service::getOne($id);
 
             if ($service !== null) {
+                $links = ReservationService::getAll(
+                    whereClause: 'service_id = ?',
+                    whereParams: [$id]
+                );
+
+                if (!empty($links)) {
+                    return $this->redirect(
+                        $this->url('service.index', ['error' => 'used'])
+                    );
+                }
+
                 $service->delete();
             }
         }

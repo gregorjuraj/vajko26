@@ -11,7 +11,7 @@ class Service extends Model
     protected string $description = '';
     protected string $price = '0.00';
     protected int $duration = 0;
-    protected bool $active = true;
+    protected int $active = 1;
 
     public function getId(): ?int
     {
@@ -40,7 +40,7 @@ class Service extends Model
 
     public function isActive(): bool
     {
-        return $this->active;
+        return $this->active === 1;
     }
 
     public function setName(string $name): void
@@ -65,6 +65,6 @@ class Service extends Model
 
     public function setActive(bool $active): void
     {
-        $this->active = $active;
+        $this->active = $active ? 1 : 0;
     }
 }

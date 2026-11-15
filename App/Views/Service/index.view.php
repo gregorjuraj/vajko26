@@ -5,6 +5,14 @@
 
 <section class="services-page">
     <h1>Správa služieb</h1>
+
+    <?php if (($error ?? '') === 'used') { ?>
+        <p role="alert">
+            Služba sa používa v rezervácii.
+            Namiesto odstránenia ju deaktivujte.
+        </p>
+    <?php } ?>
+
     <p>
         <a href="<?= $link->url('service.create') ?>" class="button">
             Pridať službu
